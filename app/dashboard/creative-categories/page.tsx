@@ -10,7 +10,7 @@ export default async function CreativeCategoriesPage() {
   const initialCategories = result.success ? result.data : [];
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto p-4">
       <Suspense 
         fallback={
           <Card loading={true} title="กำลังโหลดข้อมูล...">

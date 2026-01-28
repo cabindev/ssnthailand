@@ -100,8 +100,8 @@ export async function GET(request: NextRequest) {
     ]);
 
     const allLocations = [...traditionData, ...policyData, ...ethnicData, ...creativeData];
-    const regions = [...new Set(allLocations.map(item => item.type).filter(Boolean))].sort();
-    const provinces = [...new Set(allLocations.map(item => item.province).filter(Boolean))].sort();
+    const regions = Array.from(new Set(allLocations.map(item => item.type).filter(Boolean))).sort();
+    const provinces = Array.from(new Set(allLocations.map(item => item.province).filter(Boolean))).sort();
 
     return NextResponse.json({
       success: true,
